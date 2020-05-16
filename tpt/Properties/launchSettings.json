@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "tpt": {
+      "commandName": "Project",
+      "commandLineArgs": "--source web.config --transform web.release.config --destination web.transformed.config"
+    }
+  }
+}
