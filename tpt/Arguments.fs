@@ -2,7 +2,7 @@
 
 open Argu
 open System
-open Types
+open Common
 
 let parse argv =
     let errorHandler = ProcessExiter(colorizer = function ErrorCode.HelpText -> None | _ -> Some ConsoleColor.Red)

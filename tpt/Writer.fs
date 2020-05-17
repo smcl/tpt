@@ -1,5 +1,6 @@
 ﻿module Writer
 
+open Common
 open System.IO
 
 let writeToFile destination result =
@@ -11,5 +12,5 @@ let getWriter destination =
     | None -> printfn "%s"
 
 let write (destination:string option) (xml:string) = 
-    xml |> getWriter destination
-    0
+    xml |> getWriter destination |> Success
+    

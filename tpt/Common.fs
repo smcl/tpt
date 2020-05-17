@@ -1,4 +1,4 @@
-﻿module Types
+﻿module Common
 
 open Argu
 
@@ -14,3 +14,14 @@ type Argument =
             | Destination _ -> "Location of file to write transformed file to"
 
 type Arguments = { source: string; transform: string; destination: string option }
+
+type Result<'TSuccess, 'TFailure> =
+    | Success of 'TSuccess
+    | Failure of 'TFailure
+
+let bind switchFunc = function
+    | Success s -> switchFunc s
+    | Failure f -> Failure f
+    
+let (>>=) twoTrackInput switchFunc = 
+    bind switchFunc twoTrackInput
