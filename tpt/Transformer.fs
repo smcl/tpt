@@ -1,15 +1,13 @@
 ﻿module Transformer
 
-open Types
 open System.Xml
 open Microsoft.Web.XmlTransform
 
-let Transform (args:Arguments) = 
-
+let apply (source:string) (transform:string) = 
     let document = new XmlDocument(PreserveWhitespace = true)
-    document.Load(args.source)
+    document.Load(source)
 
-    let transform = new XmlTransformation(args.transform)
+    let transform = new XmlTransformation(transform)
 
     match transform.Apply(document) with
     | true -> document.OuterXml

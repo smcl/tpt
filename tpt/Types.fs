@@ -3,9 +3,9 @@
 open Argu
 
 type Argument =
-    | Source of string
-    | Transform of string
-    | Destination of string option
+    | [<AltCommandLine("-s")>]Source of string
+    | [<AltCommandLine("-t")>]Transform of string
+    | [<AltCommandLine("-d")>]Destination of string option
     interface IArgParserTemplate with 
         member arg.Usage =
             match arg with
