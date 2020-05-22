@@ -11,6 +11,6 @@ let getWriter destination =
     | Some dest -> writeToFile dest
     | None -> printfn "%s"
 
-let write (destination:string option) (xml:string) = 
-    xml |> getWriter destination |> Success
+let write (destination:string option) (output:string) = 
+    output |> getWriter destination |> Success
     
