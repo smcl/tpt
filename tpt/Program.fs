@@ -14,16 +14,20 @@ let printVersion =
     let assembly = Assembly.GetExecutingAssembly()
     let assemblyName = assembly.GetName()
     let version = assemblyName.Version
-    Success <| sprintf "%s %d.%d.%d" assemblyName.Name version.Major version.Minor version.Build
+    sprintf "%s %d.%d.%d" assemblyName.Name version.Major version.Minor version.Build
+    |> Success
+
+let getAction = function
+    | PrintVersion -> printVersion
+    | Default args -> apply args.source args.transform args.squashWhitespace
+
+let getWriter = function 
+    | PrintVersion -> write None
+    | Default args -> write args.destination
 
 [<EntryPoint>]
 let main argv = 
-    parse argv |> function
-        (* TODO: don't like this, rewrite *)
-        | PrintVersion -> 
-            printVersion
-            >>= write None
-        | Default args -> 
-            apply args.source args.transform args.squashWhitespace
-            >>= write args.destination
-        |> returnCode
+    let args = parse argv
+    getAction args
+    >>= getWriter args
+    |> returnCode
