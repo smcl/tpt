@@ -90,7 +90,8 @@ $ ./tpt --transform Web.Release.config --source Web.config
 * **DONE** `--version` switch
 * **DONE** `--squash-whitespace` switch
 * **DONE** Fix the nasty code in `Program.fs` that I marked with a "TODO"
-* Fix the nasty match-match code in `Transform.fs` I marked with a "TODO"
+* **DONE** Fix the nasty match-match code in `Transform.fs` I marked with a "TODO"
+* There are zero tests :-O
 
 ### 0.3.x
 
@@ -99,4 +100,3 @@ $ ./tpt --transform Web.Release.config --source Web.config
 ### Beyond
 
 * The executable is _enormous_ - see if we can trim it down somewhat. It's basically got the .net runtime bundled so maybe one small step could be creating one for those who already have it. Some mention of possible solutions in this recent HN thread https://news.ycombinator.com/item?id=23254283
-* There are zero tests :-O
