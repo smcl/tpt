@@ -11,6 +11,8 @@ Alternatively you can build it from source:
 ``` 
 $ git clone git@github.com:smcl/tpt.git
 
+$ cd tpt
+
 $ dotnet publish 
 
 $ cp tpt/bin/Release/netcoreapp3.1/win10-x64/publish/tpt ~/bin
@@ -87,6 +89,7 @@ $ ./tpt --transform Web.Release.config --source Web.config
 
 * **DONE** `--version` switch
 * **DONE** `--squash-whitespace` switch
+* **DONE** Fix the nasty code in `Program.fs` that I marked with a "TODO"
 * Fix the nasty match-match code in `Transform.fs` I marked with a "TODO"
 
 ### 0.3.x
