@@ -99,4 +99,4 @@ $ ./tpt --transform Web.Release.config --source Web.config
 
 ### Beyond
 
-* The executable is _enormous_ - see if we can trim it down somewhat. It's basically got the .net runtime bundled so maybe one small step could be creating one for those who already have it. Some mention of possible solutions in this recent HN thread https://news.ycombinator.com/item?id=23254283
+* The executable is _enormous_ - see if we can trim it down somewhat. It's basically got the .net runtime bundled so maybe one small step could be creating one for those who already have it. Some mention of possible solutions in this recent HN thread https://news.ycombinator.com/item?id=23254283 and [.NET 5](https://github.com/dotnet/runtime/issues/36590) at least acknowledges that it could be good to have this. Also CoreRT was a thing for a while (check on it)
