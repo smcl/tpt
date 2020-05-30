@@ -85,17 +85,10 @@ $ ./tpt --transform Web.Release.config --source Web.config
 
 ## TODO
 
-### 0.2.x
-
-* **DONE** `--version` switch
-* **DONE** `--squash-whitespace` switch
-* **DONE** Fix the nasty code in `Program.fs` that I marked with a "TODO"
-* **DONE** Fix the nasty match-match code in `Transform.fs` I marked with a "TODO"
-* There are zero tests :-O
-
 ### 0.3.x
 
-* TBD
+* There are zero tests :-O
+* if no `--source` switch take input from stdin 
 
 ### Beyond
 
